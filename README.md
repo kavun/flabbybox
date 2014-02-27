@@ -6,6 +6,8 @@ flappy bird clone based on [lessmilk.com Phaser flappy bird clone](http://blog.l
 - full width/height scaling
 - playable on mobile
 
+##[Play](kavun.github.io/flabbybox)
+
 ##Installation
 ```
 npm install
