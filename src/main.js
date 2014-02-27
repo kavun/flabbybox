@@ -49,8 +49,8 @@ gameState.main.prototype = {
 		this.game.stage.scale.setShowAll();
 		this.game.stage.scale.refresh();
 		this.game.stage.backgroundColor = col.hex();
-		this.game.load.image('bird', '/assets/img/bird.png');
-		this.game.load.image('pipe', '/assets/img/pipe.png');
+		this.game.load.image('bird', 'assets/img/bird.png');
+		this.game.load.image('pipe', 'assets/img/pipe.png');
 	},
 
 	create: function () {
