@@ -10,11 +10,11 @@ var giveGravity = function (sprite) {
 };
 
 var goAway = function (sprite) {
-	sprite.game.add.tween(sprite).to({ 
-			alpha: 0, 
-			height: 0, 
-			width: 0, 
-			x: sprite.x + 30, 
+	sprite.game.add.tween(sprite).to({
+			alpha: 0,
+			height: 0,
+			width: 0,
+			x: sprite.x + 30,
 			y: sprite.y + 30
 		}, 200, Phaser.Easing.Quadratic.In, true);
 };
@@ -22,24 +22,25 @@ var goAway = function (sprite) {
 var die = function (sprite) {
 	sprite.body.velocity.x = -200;
 	sprite.game.add.tween(sprite)
-		.to({ 
-			angle: 90, 
+		.to({
+			angle: 90,
 			x: 400
 		}, 1000, Phaser.Easing.Quadratic.In, true);
 };
 
 var flyIn = function (sprite) {
-	sprite.flyingIn = sprite.game.add.tween(sprite).to({ 
+	sprite.flyingIn = sprite.game.add.tween(sprite).to({
 			y: 250
 		}, 1000, Phaser.Easing.Quadratic.Out, true);
 
-	sprite.game.add.tween(sprite).to({ 
-			x: 100, 
+	sprite.game.add.tween(sprite).to({
+			x: 100,
 			angle: 0
 		}, 1000, Phaser.Easing.Quadratic.Out, true);
 };
 
 var gameState = {};
+
 gameState.main = function () {};
 gameState.main.prototype = {
 
@@ -48,8 +49,8 @@ gameState.main.prototype = {
 		this.game.stage.scale.setShowAll();
 		this.game.stage.scale.refresh();
 		this.game.stage.backgroundColor = col.hex();
-		this.game.load.image('bird', '../assets/img/bird.png');
-		this.game.load.image('pipe', '../assets/img/pipe.png');
+		this.game.load.image('bird', '/assets/img/bird.png');
+		this.game.load.image('pipe', '/assets/img/pipe.png');
 	},
 
 	create: function () {
@@ -165,7 +166,7 @@ gameState.main.prototype = {
 			}
 		}
 	},
-	
+
 	showFinalScore: function () {
 		var text = this.score >= this.highScore ? this.labelHighScore : this.labelScore;
 		var otherText = text === this.labelScore ? this.labelHighScore : this.labelScore;
