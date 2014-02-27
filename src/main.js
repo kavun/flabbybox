@@ -33,6 +33,8 @@ var flyIn = function (sprite) {
 			y: 250
 		}, 1000, Phaser.Easing.Quadratic.Out, true);
 
+	sprite.flyingIn.onComplete.add(giveGravity.bind(this, sprite));
+
 	sprite.game.add.tween(sprite).to({
 			x: 100,
 			angle: 0
@@ -58,7 +60,6 @@ gameState.main.prototype = {
 		this.bird = this.game.add.sprite(0, 0, 'bird');
 		this.bird.angle = 70;
 		flyIn(this.bird);
-		giveGravity(this.bird);
 		this.bird.body.bounce.setTo(1, 1);
 		this.downHandler = this.game.input.onDown.add(this.jump, this);
 
@@ -121,6 +122,7 @@ gameState.main.prototype = {
 	jump: function() {
 		if (this.bird.flyingIn) {
 			this.bird.flyingIn.stop();
+			giveGravity(this.bird);
 		}
 
 		this.bird.body.velocity.y = -350;
