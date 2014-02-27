@@ -42,14 +42,16 @@ var flyIn = function (sprite) {
 var gameState = {};
 gameState.main = function () {};
 gameState.main.prototype = {
+
 	preload: function () {
-		this.game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL; //resize your window to see the stage resize too
+		this.game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
 		this.game.stage.scale.setShowAll();
 		this.game.stage.scale.refresh();
 		this.game.stage.backgroundColor = col.hex();
 		this.game.load.image('bird', '../assets/img/bird.png');
 		this.game.load.image('pipe', '../assets/img/pipe.png');
 	},
+
 	create: function () {
 		this.noscore = false;
 		this.bird = this.game.add.sprite(0, 0, 'bird');
@@ -86,6 +88,7 @@ gameState.main.prototype = {
 		this.currentPipe = null;
 		this.nextPipe = null;
 	},
+
 	update: function () {
 		this.checkPipes();
 
@@ -95,6 +98,7 @@ gameState.main.prototype = {
 			this.game.physics.collide(this.bird, this.pipes, this.collisionHappened, null, this);
 		}
 	},
+
 	collisionHappened: function () {
 		this.noscore = true;
 		this.showFinalScore();
@@ -112,6 +116,7 @@ gameState.main.prototype = {
 			this.currentPipe = this.nextPipe;
 		}
 	},
+
 	jump: function() {
 		if (this.bird.flyingIn) {
 			this.bird.flyingIn.stop();
@@ -128,6 +133,7 @@ gameState.main.prototype = {
 		this.game.time.events.remove(this.pipeAdder);
 		this.game.state.start('main');
 	},
+
 	addOnePipe: function (x, y) {
 		var pipe = this.pipes.getFirstDead();
 		pipe.reset(x, y);
@@ -136,6 +142,7 @@ gameState.main.prototype = {
 
 		return pipe;
 	},
+
 	addRowOfPipes: function () {
 		var hole = Math.floor(Math.random() * 5) + 1;
 		for (var i = 0; i < 8; i++) {
@@ -144,6 +151,7 @@ gameState.main.prototype = {
 			}
 		}
 	},
+
 	addToScore: function () {
 		if (this.noscore === false) {
 			this.labelScore.content = ++this.score;
@@ -157,6 +165,7 @@ gameState.main.prototype = {
 			}
 		}
 	},
+	
 	showFinalScore: function () {
 		var text = this.score >= this.highScore ? this.labelHighScore : this.labelScore;
 		var otherText = text === this.labelScore ? this.labelHighScore : this.labelScore;
