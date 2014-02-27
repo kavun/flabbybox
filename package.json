@@ -1,0 +1,26 @@
+{
+  "name": "flabbybox",
+  "version": "0.0.1",
+  "description": "phaser flappy bird clone",
+  "license": "MIT",
+  "homepage": "https://kavun.github.io/flabbybox",
+  "author": "Kevin Reed",
+  "dependencies": {
+    "rancol": "0.0.3"
+  },
+  "devDependencies": {
+    "jshint-stylish": "~0.1.5",
+    "gulp-util": "~2.2.14",
+    "gulp-jshint": "~1.5.0",
+    "gulp": "~3.5.2",
+    "gulp-browserify": "~0.4.6",
+    "gulp-connect": "~1.0.5",
+    "tiny-lr": "0.0.5",
+    "express": "~3.4.8",
+    "gulp-livereload": "~1.1.1",
+    "debowerify": "~0.6.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-header": "~1.0.2",
+    "gulp-rename": "~1.1.0"
+  }
+}

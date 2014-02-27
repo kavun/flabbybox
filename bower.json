@@ -1,0 +1,19 @@
+{
+  "name": "flabbybird",
+  "version": "0.0.1",
+  "authors": [
+    "Kevin Reed <kevin.a.reed@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "phaser": "~1.1.5"
+  }
+}

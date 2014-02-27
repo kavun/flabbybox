@@ -1,0 +1,18 @@
+{
+  "browser": true,
+  "globals": {
+    "require": true,
+    "module": true
+  },
+  "globalstrict": true,
+  "quotmark": "single",
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+  "eqnull": true,
+  "validthis": true,
+  "immed": true,
+  "expr": true,
+  "curly": true,
+  "camelcase": true
+}
