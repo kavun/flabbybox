@@ -59,6 +59,7 @@ gameState.main.prototype = {
 		this.noscore = false;
 		this.bird = this.game.add.sprite(0, 0, 'bird');
 		this.bird.angle = 70;
+		this.bird.anchor.setTo(-0.2, 0.5);
 		flyIn(this.bird);
 		this.bird.body.bounce.setTo(1, 1);
 		this.downHandler = this.game.input.onDown.add(this.jump, this);
@@ -129,6 +130,15 @@ gameState.main.prototype = {
 		this.game.add.tween(this.bird)
 			.to({ height: 40 }, 100, Phaser.Easing.Linear.None, true)
 			.to({ height: 50 }, 100, Phaser.Easing.Linear.None, true);
+
+
+		if (this.bird.angling) {
+			this.bird.angling.stop();
+		}
+
+		this.bird.angling = this.game.add.tween(this.bird)
+			.to({ angle: -10 }, 80, Phaser.Easing.Linear.None, true)
+			.to({ angle: 50 }, 2000, Phaser.Easing.Linear.None, true);
 	},
 
 	restartGame: function () {
